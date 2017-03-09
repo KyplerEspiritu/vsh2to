@@ -1,0 +1,79 @@
+$myWidth: 100%;
+$myTransition: bottom 0.5s ease;
+$colorWhite: white;
+$myNone: none;
+$None: 0;
+$myInputBottom: -300px;
+$myTextAlign: center;        
+$myPostion: fixed;
+$myBorderBottom: 1px solid black;
+$myInlineBlock: inline-block;
+$myBlock: block;
+$myPadding: 15px;      
+
+@mixin myBoxar{
+    padding-left: $myPadding;
+    top: $None;   
+    z-index: $None;
+}
+
+@mixin myLabel{
+    padding-top: 50px;
+    left: $None;
+    width: $myWidth;
+    color: $colorWhite;
+    background: #00183f;
+    position: $myPostion;
+    text-align: $myTextAlign;
+    bottom: $None;
+    z-index: 5;
+    cursor: pointer;
+    padding: 5px;
+    display: $myBlock;
+}
+
+@mixin myNav{
+    background: #0f92d8;
+    margin: $None auto;
+    max-width: $myWidth;
+    width: $myWidth;
+    position: $myPostion;
+    left: $None;
+    bottom: -400px;
+    z-index: 2;
+}
+
+@mixin myLi{
+    list-style-type: $myNone;
+    border-bottom: $myBorderBottom;
+    text-align: $myTextAlign;
+    line-height: 20px;
+    display: $myBlock;
+    padding: $myPadding;
+}
+
+@mixin myLi_a{
+    display: $myBlock;
+    color: $colorWhite;
+    text-align: $myTextAlign;
+    padding: 14px 16px;
+    text-decoration: $myNone;
+}
+
+@mixin myUl_1{
+    padding: $myPadding;
+    margin-top: -15px;
+}
+
+@mixin myUl_2{
+    list-style-type: $myNone;
+    margin: $None;
+    padding: $None;
+    background-color: #333;
+}
+
+@mixin myA{
+    text-decoration: $myNone;
+    color: #01086b;
+    font-weight: bolder;
+}

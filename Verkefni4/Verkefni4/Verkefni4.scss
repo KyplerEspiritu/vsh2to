@@ -1,0 +1,473 @@
+@import "normalize.scss";
+     
+$myWidth: 100%;
+$myTransition: bottom 0.5s ease;
+$colorWhite: white;
+$myNone: none;
+$None: 0;
+$myInputBottom: -300px;
+$myTextAlign: center;        
+$myPostion: fixed;
+$myBorderBottom: 1px solid black;
+$myInlineBlock: inline-block;
+$myBlock: block;
+$myPadding: 15px;      
+
+@mixin myBoxar{
+    padding-left: $myPadding;
+    top: $None;   
+    z-index: $None;
+}
+
+@mixin myLabel{
+    padding-top: 50px;
+    left: $None;
+    width: $myWidth;
+    color: $colorWhite;
+    background: #00183f;
+    position: $myPostion;
+    text-align: $myTextAlign;
+    bottom: $None;
+    z-index: 5;
+    cursor: pointer;
+    padding: 5px;
+    display: $myBlock;
+}
+
+@mixin myNav{
+    background: #0f92d8;
+    margin: $None auto;
+    max-width: $myWidth;
+    width: $myWidth;
+    position: $myPostion;
+    left: $None;
+    bottom: -400px;
+    z-index: 2;
+}
+
+@mixin myLi{
+    list-style-type: $myNone;    
+    border-bottom: $myBorderBottom;
+    text-align: $myTextAlign;
+    line-height: 20px;
+    display: $myBlock;
+    padding: $myPadding;
+}
+
+@mixin myLi_a{
+    display: $myBlock;
+    color: $colorWhite;
+    text-align: $myTextAlign;
+    padding: 14px 16px;
+    text-decoration: $myNone;
+}
+
+@mixin myUl_1{
+    padding: $myPadding;
+    margin-top: -15px;
+}
+
+@mixin myUl_2{
+    list-style-type: $myNone;
+    margin: $None;
+    padding: $None;
+    background-color: #333;
+}
+
+@mixin myA{
+    text-decoration: $myNone;
+    color: #01086b;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 0em) and (max-width: 37.5em){
+
+    header{
+        order: 1;
+    }
+
+    figure{
+        display: $myInlineBlock;
+    }
+
+    article{
+        width: $myWidth;
+        order: 1;
+    }
+
+    .aside1{
+        width: $myWidth;
+        order: 2;
+    }
+       
+    .aside2{
+        width: $myWidth;
+        order: 3;
+    }
+
+    footer{
+        order: 3;
+        height: 22.5em;
+    }
+
+    .boxar{
+        @include myBoxar;
+    }
+
+    label{
+        @include myLabel;
+    }
+
+    nav{
+        @include myNav;
+    }
+
+    ul{
+        @include myUl_1;
+    }
+
+    li{
+        @include myLi;
+
+        &:last-child{
+            border: $None;
+            padding-bottom: 10px;
+        }
+
+        &:hover{
+            background: #b2e4ff;
+        }
+    }
+
+    a{
+        @include myA;
+    }
+
+    input{
+        display: $myNone;
+
+        &:checked ~ nav{
+            bottom: $None;
+            transition: $myTransition;
+        }
+
+        &:not(:checked) ~ nav{
+            bottom: $myInputBottom;
+            transition: $myTransition;
+        }
+    }
+}
+
+@media screen and (min-width: 37.5em) and (max-width: 48em){
+
+    figure{
+        display: $myInlineBlock;
+    }
+
+    header{
+        order: 1;
+    }
+
+    article{
+        width: $myWidth;
+        order: 1;
+    }
+
+    .aside1{
+        width: 50%;
+        order: 2;
+    }
+
+    .aside2{
+        width: 50%;
+        order: 3;
+    }
+
+    footer{
+        order: 3;
+        height: 20em;
+    }
+
+    .boxar{
+        @include myBoxar;
+    }
+
+    label{
+        @include myLabel;
+    }
+
+    nav{
+        @include myNav;
+    }
+
+    ul{
+        @include myUl_1;
+    }
+
+    li{
+        @include myLi;
+
+        &:last-child{
+            border: $None;
+            padding-bottom: 10px;
+        }
+
+        &:hover{
+            background: #b2e4ff;
+        }
+    }
+
+    a{
+        @include myA;
+    }
+
+
+    input{
+        display: $myNone;
+
+        &:checked ~ nav{
+            bottom: $None;
+            transition: $myTransition;
+        }
+
+        &:not(:checked) ~ nav{
+            bottom: $myInputBottom;
+            transition: $myTransition;
+        }
+    }   
+}
+
+@media screen and (min-width: 48em) and (max-width: 60em){
+
+    label, input{
+        display: $myNone;
+    }
+
+    nav{
+        background: #ff5e5e;
+        width: $myWidth;
+        order: 1;
+        z-index: 1;
+    }
+
+    figure{
+        display: $myInlineBlock;
+    }
+
+
+    .topmenu{
+        text-align: $myTextAlign;
+    }
+
+    ul {
+        @include myUl_2;
+    }
+
+    li{
+        display: $myInlineBlock;
+
+        a{
+            @include myLi_a;
+
+            &:hover {
+                background-color: #111;
+            }
+        }
+    }
+
+    header{
+        order: 2;
+    }
+
+    .aside1{
+        width: 25%;
+        order: 1;
+    }
+
+    .aside2{
+        width: 25%;
+        order: 3;
+    }
+
+    article{
+        width: 50%;
+        order: 2;
+    }
+
+    footer{
+        order: 4;
+        height: 30vh;
+    }
+
+    .boxar{
+        position: relative;
+        left: 3%;
+        top: 2%;
+        z-index: 1;
+    }
+
+    footer{
+        width: $myWidth;
+        order: 4;
+        background: #80ff92;
+    }
+
+}
+
+
+@media screen and (min-width: 60em){
+
+    label, input{
+        display: $myNone;
+    }
+
+    .boxar{
+        position: $myPostion;
+        left: $None;
+        top: 15%;
+    }
+
+    nav{
+        background: #ff5e5e;
+        width: $myWidth;
+        order: 1;
+        z-index: 1;
+    }
+
+    button{
+        display: $myNone;
+    }
+
+    .topmenu{
+        text-align: $myTextAlign;
+    }
+
+    ul {
+        @include myUl_2;
+    }
+
+    li{
+        display: $myInlineBlock;
+
+        a{
+            @include myLi_a;
+
+            &:hover {
+                background-color: #111;
+            }
+        }
+    }
+
+    header{
+        order: 2;
+    }
+
+    .aside1{
+        width: 25%;
+        order: 1;
+    }
+
+    .aside2{
+        width: 25%;
+        order: 3;
+    }
+
+    article{
+        width: 50%;
+        order: 2;
+    }
+
+    footer{
+        order: 4;
+        height: 20vh;
+    }
+}
+
+/*-------------------------------------*/
+
+body{
+    background: $colorWhite;
+    display: flex;
+    flex-flow: row wrap;
+    margin: $None auto;
+    max-width: 60em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    display: flex;
+    flex-flow: row wrap;
+    width: $myWidth;
+    order: 2;
+}
+
+.padding_header{
+    padding-left: $myPadding;
+    line-height: 25px;
+}
+
+.padding_aside{
+    padding-left: $myPadding;
+    padding-right: $myPadding;
+    line-height: 25px;
+}
+
+.padding_article{
+    padding-left: $myPadding;
+    padding-right: $myPadding;
+    line-height: 25px;
+}
+
+.padding_footer{
+    padding: $myPadding;
+    line-height: 25px;
+}
+
+.boxA{
+    background: lighten(lightblue, 5%);
+}
+
+.boxB{
+    background: lighten(#428aff, 5%);
+}
+
+.boxC{
+    background: lighten(orange, 5%);
+}
+
+.boxD{
+    background: lighten(tomato, 5%);
+}
+
+header{
+    width: $myWidth;
+    background: lighten(invert(#ff4646), 10%);
+}
+
+article{
+    background: grayscale(#00b1ff);
+}
+
+.aside1{
+    background: lighten(invert(#ffd800), 30%);
+}
+
+.aside2{
+    background: lighten(invert(#ffd800), 30%);
+}
+
+footer{
+    width: $myWidth;
+    background: invert(navy);
+}
+
+figure{
+    height: 3em;
+    width: 3em;
+    color: $colorWhite;
+    text-align: $myTextAlign;
+    line-height: 50px;
+    margin: -3px;
+}
+
+/*-------------------------------------*/
